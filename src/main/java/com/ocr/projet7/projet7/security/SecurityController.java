@@ -11,18 +11,14 @@ import java.util.List;
 public class SecurityController {
 
 
-    @RequestMapping(value = "/home")
-    public String home(Model model){
 
-        return "home";
-    }
     @RequestMapping(value = "/login")
     public String login(){
         return "login";
     }
 
     @RequestMapping(value = "/")
-    public String home(){
+    public String homeShort(){
         return "redirect:/home";
     }
 
@@ -31,10 +27,10 @@ public class SecurityController {
         return "403";
     }
 
-    @GetMapping(value = "/**/{path:[^\\.]*}")
-    public String redirect404() {
-        return "redirect:/home";
-    }
+    //@GetMapping(value = "/**/{path:[^\\.]*}")
+    //public String redirect404() {
+    //    return "redirect:/home";
+    //}
 
 
 

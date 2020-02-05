@@ -76,6 +76,9 @@ public class Utilisateur implements UserDetails {
     @Column(name = "enabled")
     private boolean enabled;
 
+    @OneToOne
+    @JoinColumn(name ="ID_RESERVATION" )
+    private Reservation reservation;
 
     public Utilisateur() {
         this.accountNonExpired = true;
@@ -150,6 +153,14 @@ public class Utilisateur implements UserDetails {
 
     public void setAccountNonLocked(boolean accountNonLocked) {
         this.accountNonLocked = accountNonLocked;
+    }
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
     }
 
     public void setCredentialsNonExpired(boolean credentialsNonExpired) {

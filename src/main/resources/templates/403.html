@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout}">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Gestion de bibliotheque</title>
-
+    <title>403</title>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
@@ -23,18 +20,15 @@
             integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
             crossorigin="anonymous"></script>
 </head>
-<body  layout:fragment="content">
-<div class=" container h-100 spacer row col-md-6 mx-auto">
-    <div class="card-deck">
-        <div class="card col-sm-12" th:each="lr:${listResa}">
-            <img class="card-img-top" th:src="${lr.urlImg}" th:alt="${lr.livre}">
-            <div class="card-body">
-                <h5 class="card-title" th:text="${lr.livre}"></h5>
-                <p class="card-text">Livre emprunté le: <span th:text="${#dates.format(lr.dateEmprunt, 'dd/MM/yyyy')}"/></p>
-                <p class="card-text">Retour le: <span th:text="${#dates.format(lr.dateRetour, 'dd/MM/yyyy')}"/></p>
-                <a class="btn btn-primary" th:if="${lr.prolonger}==false" th:href="@{|/reservation/${lr.id}/prolonger|}">Prolonger la Réservation</a>
+
+<body>
+<div  class=" col-md-4 mx-auto" >
+    <div class="card bigspacer">
+        <div class="card-header"><h1 class="card-title">403</h1></div>
+            <div class="card-body " >
+                    <p>Vous n'avez pas les droits pour cette section de la bibliothèque!</p>
+                    <a class="btn btn-primary" th:href="@{/home}">Retour à l'acceuil</a>
             </div>
-        </div>
     </div>
 </div>
 </body>
